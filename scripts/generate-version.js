@@ -20,14 +20,13 @@ if (existsSync(versionPath)) {
   }
 }
 
-// Update only the timestamp, keep the version
+// Keep only the version
 const versionInfo = {
   version: currentVersion,
-  buildTime: new Date().toISOString(),
-  buildTimestamp: Date.now(),
 };
 
 // Write to src/version.json
 writeFileSync(versionPath, JSON.stringify(versionInfo, null, 2) + '\n');
 
-console.log('✓ Updated version.json:', versionInfo);
+console.log('✓ version.json ready:', versionInfo);
+

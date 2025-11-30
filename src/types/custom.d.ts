@@ -18,8 +18,6 @@ declare module '*.png' {
 declare module '@/version.json' {
   interface VersionInfo {
     version: string;
-    buildTime: string;
-    buildTimestamp: number;
   }
   const versionInfo: VersionInfo;
   export default versionInfo;

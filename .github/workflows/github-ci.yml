@@ -54,6 +54,11 @@ jobs:
       url: https://www.silviudinu.com
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -90,3 +95,13 @@ jobs:
           echo "🌐 Website: https://www.silviudinu.com"
           echo "📦 S3 Bucket: ${{ env.S3_BUCKET }}"
           echo "☁️ CloudFront Distribution: ${{ env.CLOUDFRONT_DISTRIBUTION_ID }}"
+
+      - name: Setup Node.js for version bump
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Increment version and commit
+        run: |
+          npm run postdeploy
+          git push

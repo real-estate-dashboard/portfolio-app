@@ -25,13 +25,11 @@ try {
 
   // Update version info
   versionData.version = newVersion;
-  versionData.buildTime = new Date().toISOString();
-  versionData.buildTimestamp = Date.now();
 
   // Write updated version
   writeFileSync(versionPath, JSON.stringify(versionData, null, 2) + '\n');
 
-  console.log(`✓ Version incremented: ${versionData.version} → ${newVersion}`);
+  console.log(`✓ Version incremented: ${versionParts.join('.')} → ${newVersion}`);
 
   // Git add and commit with [skip ci]
   try {

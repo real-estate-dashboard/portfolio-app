@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "node scripts/generate-version.js && tsc && vite build",
+    "build": "tsc && vite build",
     "postdeploy": "node scripts/post-deploy.js",
     "preview": "vite preview",
     "test": "vitest",

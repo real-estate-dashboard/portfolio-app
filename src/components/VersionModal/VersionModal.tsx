@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, Calendar, Package } from 'lucide-react';
+import { X, Package } from 'lucide-react';
 import { memo } from 'react';
 import styled from 'styled-components';
 import versionInfo from '@/version.json';
@@ -108,18 +108,6 @@ interface VersionModalProps {
 }
 
 export const VersionModal = memo(({ isOpen, onClose }: VersionModalProps) => {
-  const formatDate = (isoString: string) => {
-    const date = new Date(isoString);
-    return new Intl.DateTimeFormat('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZoneName: 'short',
-    }).format(date);
-  };
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -148,18 +136,8 @@ export const VersionModal = memo(({ isOpen, onClose }: VersionModalProps) => {
                   <Package size={20} />
                 </IconWrapper>
                 <InfoContent>
-                  <InfoLabel>Version</InfoLabel>
+                  <InfoLabel>Current Version</InfoLabel>
                   <InfoValue>v{versionInfo.version}</InfoValue>
-                </InfoContent>
-              </InfoItem>
-
-              <InfoItem>
-                <IconWrapper>
-                  <Calendar size={20} />
-                </IconWrapper>
-                <InfoContent>
-                  <InfoLabel>Last Updated</InfoLabel>
-                  <InfoValue>{formatDate(versionInfo.buildTime)}</InfoValue>
                 </InfoContent>
               </InfoItem>
             </Content>
