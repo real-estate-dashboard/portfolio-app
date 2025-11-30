@@ -1,14 +1,16 @@
+import { VersionModal } from '@components/VersionModal/VersionModal';
 import { contentData } from '@data/content';
 import { Facebook, Github, Linkedin, Twitter } from 'lucide-react';
 import { memo, useState } from 'react';
 import styled from 'styled-components';
-import { VersionModal } from '@components/VersionModal/VersionModal';
 
 const FooterContainer = styled.footer`
   background-color: ${({ theme }) => theme.colors.card};
   border-top: 1px solid ${({ theme }) => theme.colors.border};
   padding: 2rem;
   margin-top: auto;
+  min-height: 100px;
+  contain: layout;
 `;
 
 const FooterContent = styled.div`
@@ -101,9 +103,9 @@ export const Footer = memo(() => {
         </Copyright>
       </FooterContent>
 
-      <VersionModal 
-        isOpen={isVersionModalOpen} 
-        onClose={() => setIsVersionModalOpen(false)} 
+      <VersionModal
+        isOpen={isVersionModalOpen}
+        onClose={() => setIsVersionModalOpen(false)}
       />
     </FooterContainer>
   );

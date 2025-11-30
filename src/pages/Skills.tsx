@@ -516,7 +516,7 @@ const Skills = memo(() => {
                   <Code size={20} />
                   {codewarsData.codeChallenges.totalCompleted}
                 </CodewarsStatValue>
-                <CodewarsStatLabel>Completed Kata</CodewarsStatLabel>
+                <CodewarsStatLabel>Completed Challenges</CodewarsStatLabel>
               </CodewarsStat>
             </CodewarsStats>
             <div style={{ textAlign: 'center' }}>

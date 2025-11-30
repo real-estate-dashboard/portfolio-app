@@ -43,6 +43,10 @@ const Title = styled(motion.h1)`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
+  @media (max-width: 768px) {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
 `;
 
 const Subtitle = styled(motion.h2)`

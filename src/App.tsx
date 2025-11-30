@@ -16,7 +16,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html,
   body {
+    background-color: ${({ theme }) => theme.colors.background};
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

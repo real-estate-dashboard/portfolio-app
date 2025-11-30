@@ -72,7 +72,7 @@ const Blinker = ({
   }, [isTypingComplete, cycleInterval, onCycleComplete, text]);
 
   return (
-    <Tag className={className}>
+    <Tag className={className} style={{ minHeight: '1.2em', display: 'inline-block' }}>
       {displayedText}
       <span
         style={{

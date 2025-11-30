@@ -1,8 +1,8 @@
+import versionInfo from '@/version.json';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, Package } from 'lucide-react';
+import { Package, X } from 'lucide-react';
 import { memo } from 'react';
 import styled from 'styled-components';
-import versionInfo from '@/version.json';
 
 const Overlay = styled(motion.div)`
   position: fixed;
