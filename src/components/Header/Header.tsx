@@ -33,6 +33,11 @@ const Nav = styled.nav`
   align-items: center;
   min-height: 4rem;
   position: relative;
+
+  @media (max-width: 768px) {
+    padding: 0.1rem 1rem;
+    min-height: 3rem;
+  }
 `;
 
 const Logo = styled.button`
@@ -58,22 +63,12 @@ const Logo = styled.button`
 
 const LogoFirstName = styled.span`
   font-size: 2.75rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.925rem; /* 30% smaller */
-  }
 `;
 
 const LogoLastName = styled.span`
   font-size: 2.75rem;
   padding-left: 2rem;
   margin-top: -0.5rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.925rem; /* 30% smaller */
-    padding-left: 1.4rem; /* Proportionally smaller */
-    margin-top: -0.35rem; /* Proportionally smaller */
-  }
 `;
 
 const RightActions = styled.div`
@@ -215,14 +210,14 @@ export const Header = memo(({ sections = [], onNavigate, isTOCExpanded = false }
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Show header when scrolling up, hide when scrolling down
       if (currentScrollY < lastScrollY.current || currentScrollY < 100) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         setIsVisible(false);
       }
-      
+
       lastScrollY.current = currentScrollY;
     };
 

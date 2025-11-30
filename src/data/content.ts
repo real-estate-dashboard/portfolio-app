@@ -249,8 +249,8 @@ export const contentData: ContentData = {
       startDate: "2024-02-01",
       endDate: "Present",
       responsibilities: [
-        "In my role as a Senior Full Stack Developer, I focus on developing cutting-edge software solutions that simplify financial operations and elevate the user experience. My contributions are central to equipping our users with dependable and effective financial tools",
-        "Working with tools like: React, Websockets, SharedWorkers, Gitlab CI/CD"
+        "In my role as a Senior Software Engineer, I focus on developing cutting-edge software solutions that simplify financial operations and elevate the user experience. My contributions are central to equipping our users with dependable and effective financial tools",
+        "Working with tools like: React, Websockets, SharedWorkers, CI/CD"
       ]
     },
     {
